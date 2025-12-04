@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registration</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            background: linear-gradient(to right, lightblue, blue);
+        }
+        h2{
+            font-size: 3em;
+            font-weight: 600;
+            text-align:center;
+            color : white;
+        }
+        form {
+            width: 380px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        label {
+            font-weight: 700;
+            color: black;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 6px 0 12px 0;
+            border: 1px solid #888;
+            border-radius: 4px;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        button {
+            width : 100%;
+            padding: 10px 15px;
+            background-color: #4facfe;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2575fc;
+        }
+    </style>
+</head>
+<body>
+
+<h2>User Registration Form</h2>
+
+<form id="regForm">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+        <div class="error" id="nameError"></div>
+    </div>
+
+    <div>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" placeholder="Enter your email">
+        <div class="error" id="emailError"></div>
+    </div>
+
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter password">
+        <div class="error" id="passError"></div>
+    </div>
+
+    <div>
+        <label for="cpassword">Confirm Password:</label>
+        <input type="password" id="cpassword" name="cpassword" placeholder="Confirm password">
+        <div class="error" id="cpassError"></div>
+    </div>
+
+    <button type="submit">Register</button>
+</form>
+
+<script>
+    // JavaScript validation (you can use either JS or jQuery)
+    document.getElementById("regForm").addEventListener("submit", function(event){
+        event.preventDefault(); // prevent form submission
+
+        // Clear previous errors
+        document.getElementById("nameError").innerText = "";
+        document.getElementById("emailError").innerText = "";
+        document.getElementById("passError").innerText = "";
+        document.getElementById("cpassError").innerText = "";
+
+        let isValid = true;
+
+        // Name validation
+        let name = document.getElementById("name").value.trim();
+        if(name === ""){
+            document.getElementById("nameError").innerText = "Name is required.";
+            isValid = false;
+        }
+
+        // Email validation
+        let email = document.getElementById("email").value.trim();
+        let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+        if(email === ""){
+            document.getElementById("emailError").innerText = "Email is required.";
+            isValid = false;
+        } else if(!emailPattern.test(email)){
+            document.getElementById("emailError").innerText = "Enter a valid email address.";
+            isValid = false;
+        }
+
+        // Password validation
+        let password = document.getElementById("password").value;
+        if(password.length < 6){
+            document.getElementById("passError").innerText = "Password must be at least 6 characters.";
+            isValid = false;
+        }
+
+        // Confirm password validation
+        let cpassword = document.getElementById("cpassword").value;
+        if(cpassword !== password){
+            document.getElementById("cpassError").innerText = "Passwords do not match.";
+            isValid = false;
+        }
+
+        if(isValid){
+            alert("Form submitted successfully!");
+            // Optionally, you can submit the form here
+            // this.submit();
+        }
+    });
+<!--<script>
+$(document).ready(function () {
+    
+    $("#regForm").submit(function (e) {
+        e.preventDefault();
+
+        // Clear previous error messages
+        $("#nameError").text("");
+        $("#emailError").text("");
+        $("#passError").text("");
+        $("#cpassError").text("");
+
+        let valid = true;
+
+        let name = $("#name").val().trim();
+        let email = $("#email").val().trim();
+        let password = $("#password").val();
+        let cpassword = $("#cpassword").val();
+
+        // Name validation
+        if (name === "") {
+            $("#nameError").text("Name is required");
+            valid = false;
+        }
+
+        // Email validation
+        let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/;
+        if (email === "") {
+            $("#emailError").text("Email is required");
+            valid = false;
+        } else if (!emailPattern.test(email)) {
+            $("#emailError").text("Invalid email format");
+            valid = false;
+        }
+
+        // Password validation
+        if (password.length < 6) {
+            $("#passError").text("Password must be at least 6 characters");
+            valid = false;
+        }
+
+        // Confirm Password validation
+        if (cpassword !== password) {
+            $("#cpassError").text("Passwords do not match");
+            valid = false;
+        }
+
+        // If all checks are valid
+        if (valid) {
+            alert("Registration Successful!");
+        }
+    });
+
+});
+</script> -->
+    
+</script>
+
+</body>
+</html>

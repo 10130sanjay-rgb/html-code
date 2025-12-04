@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tourism Information</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      margin: 20px;
+    }
+    h1 {
+      text-align:center;
+      color: darkblue;
+    }
+    p {
+      text-align: center;
+      font-size: 18px;
+      color: #333;
+    }
+    form {
+      width: 400px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgb(210, 16, 16);
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #141212;
+    }
+    .radio-group {
+      margin-top: 5px;
+    }
+    .radio-group input {
+      width: auto;
+      margin-right: 5px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      background: darkblue;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: darkgoldenrod;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Welcome to Incredible India</h1>
+  <p>Explore famous tourist places with us!</p>
+
+  <form>
+    <!-- Name input -->
+     <label for="name"> Full Name: </label>
+     <input type="text" id="name" placeholder="Enter your name" required>
+    <!-- Email input -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="Enter your email" required>
+
+    <!-- Select destination -->
+    <label for="place">Choose Destination:</label>
+    <select id="place">
+      <option>Agra - Taj Mahal</option>
+      <option>Jaipur - Pink City</option>
+      <option>Kerala - Backwaters</option>
+      <option>Goa - Beaches</option>
+    </select>
+
+    <!-- Radio button for travel type -->
+    <label>Travel Type:</label>
+    <div class="radio-group">
+      <input type="radio" name="travel" value="solo"> Solo
+      <input type="radio" name="travel" value="family"> Family
+      <input type="radio" name="travel" value="group"> Group
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>

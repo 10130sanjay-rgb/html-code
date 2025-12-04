@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Demo of many HTML tags">
+  <title>HTML Tag Showcase</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+  <!--specifies the base URL to use for all relative URLs in a document. There can be only one <base> element in a document.
+  A <base> element must have an href attribute, a target attribute, or both. If at least one of these attributes are specified, 
+  the <base> element must come before other elements with attribute values that are URLs, such as a <link>'s href attribute.-->
+  
+  
+  <!-- <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    header, footer { background: #eee; padding: 10px; }
+    nav a { margin-right: 10px; }
+    section { margin-bottom: 20px; }
+    figure { margin: 0; }
+  </style> -->
+</head>
+<body>
+
+  <header>
+    <h1>HTML Tag Showcase</h1> 
+    <nav>
+      <ul>
+      <li> <a href="#text">Text</a> <br> </li>
+      <li> <a href="#media">Media</a> <br> </li>
+      <li> <a href="#forms">Forms</a> <br> </li>
+      <li> <a href="#tables">Tables</a> <br> </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="text">
+      <h2>Text and Structure</h2>
+      <p>This is a <strong>paragraph</strong> with <em>emphasis</em>, <mark>highlight</mark>, <small>small text</small>, and <del>deleted it</del> <ins>inserted</ins> content.</p>
+      <!--used to visually and semantically separate quoted text from the rest of the content.
+       The cite attribute is not for styling—it's for semantic meaning and source reference.-->
+      <blockquote cite="https://example.com">This is a blockquote.</blockquote>
+      <!--pre: preformatted text. It’s used when you want the browser to display text exactly as it appears in your HTML code — including spaces, tabs, and line breaks.
+       code:displays its contents styled in a fashion intended to indicate that the text is a short fragment of computer code-->
+      <pre><code>let x = 10;</code></pre>
+      <p id="first">
+       <abbr title="HyperText Markup Language" class="gray">HTML</abbr> is the language of the web. </p>
+      <address>Contact us at: info@dudu.com</address>
+      <details>
+        <summary>Click to expand</summary>
+        Hidden details go here.
+      </details>
+      <hr>
+    </section>
+
+    <section id="media">
+      <h2>Media Elements</h2>
+      <figure>
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        <figcaption>Sample image using &lt;figure&gt; and &lt;figcaption&gt;</figcaption>
+      </figure>
+      <audio controls>
+        <source src="sample.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+      </audio>
+      <video controls width="250">
+        <source src="sample.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <object data="sample.pdf" type="application/pdf" width="300" height="200"></object>
+      <embed src="sample.swf" width="300" height="200">
+    </section>
+
+    <section id="forms">
+      <h2>Form Elements</h2>
+      <form action="/submit" method="post">
+        <fieldset>
+          <legend>User Info</legend>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Enter ur name " ><br>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Enter ur email" ><br>
+
+          <input type="checkbox" id="subscribe" name="subscribe">
+          <label for="subscribe">Subscribe</label><br>
+
+          <input type="radio" id="male" name="gender" value="male">
+          <label for="male">Male</label>
+
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female">Female</label><br
+          >
+          <label for="country">Country:</label>
+          <select id="country" name="country">
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+          </select><br>
+          <textarea name="comments" rows="4" cols="30">Enter comments here...</textarea><br>
+          <button type="submit">Submit</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="tables">
+      <h2>Tables</h2>
+      <table border="4px" class="tab">
+        <caption>Sample Table</caption>
+        <thead>
+          <tr><th>Name</th><th>Age</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Alice</td><td>25</td></tr>
+          <tr><td>Bob</td><td>30</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="2">End of data</td></tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <section id="misc">
+      <h2>Miscellaneous Tags</h2>
+      <!--displays an indicator showing the completion progress of a task, typically displayed as a progress bar.-->
+      <progress value="70" max="100"></progress>
+      <!--  represents either a scalar value within a known range or a fractional value. -->
+      <meter value="0.6">60%</meter>
+      <time datetime="2025-10-02">October 2, 2025</time>
+      <output>Result: 42</output>
+      <template>
+        <p>This is hidden template content.</p>
+      </template>
+      <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 HTML Showcase</p>
+    <div class="circle">
+
+    </div>
+  </footer>
+
+</body>
+</html>
